@@ -91,28 +91,29 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="903,4473" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="971,4758" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="lst_write" />
       <Variable x:TypeArguments="x:String" Name="str_content" />
       <Variable x:TypeArguments="scg:List(x:Double)" Name="lst_besum" />
-      <Variable x:TypeArguments="x:Double" Name="int_total" />
+      <Variable x:TypeArguments="x:Double" Name="db_total" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="648,4450" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="648,4735" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_ReadFile" />
         <Variable x:TypeArguments="x:String" Name="str_amount" />
         <Variable x:TypeArguments="x:String" Name="str_ReferenceNo" />
         <Variable x:TypeArguments="x:String" Name="str_normalized" />
         <Variable x:TypeArguments="s:String[]" Name="arst_lines" />
-        <Variable x:TypeArguments="x:String" Name="int_afsum" />
-        <Variable x:TypeArguments="x:Double" Name="sumnumber" />
+        <Variable x:TypeArguments="x:String" Name="str_afsum" />
+        <Variable x:TypeArguments="x:Double" Name="db_sumnumber" />
         <Variable x:TypeArguments="x:String" Name="str_total" />
+        <Variable x:TypeArguments="x:Int32" Name="idx" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -170,22 +171,24 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="줄바꿈 기준으로 반복문&#xD;&#xA;" DisplayName="For Each line" sap:VirtualizedContainerService.HintSize="614,2653" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arst_lines]">
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="줄바꿈 기준으로 반복문&#xD;&#xA;" DisplayName="For Each line" sap:VirtualizedContainerService.HintSize="614,2645" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arst_lines]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:String" Name="line" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="612,2481" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="612,2473" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If sap2010:Annotation.AnnotationText="$포함된 행 실행&#xD;&#xA;" Condition="[line.Contains(&quot;$&quot;)]" sap:VirtualizedContainerService.HintSize="578,2421" sap2010:WorkflowViewState.IdRef="If_1">
+              <If sap2010:Annotation.AnnotationText="$포함된 행 실행&#xD;&#xA;" Condition="[line.Contains(&quot;$&quot;)]" sap:VirtualizedContainerService.HintSize="578,2413" sap2010:WorkflowViewState.IdRef="If_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
@@ -202,6 +205,8 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
@@ -250,9 +255,6 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <If.Then>
                                     <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,447" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                                      <Sequence.Variables>
-                                        <Variable x:TypeArguments="x:String" Name="str_total" />
-                                      </Sequence.Variables>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -285,7 +287,7 @@
                                   <If.Else>
                                     <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,843" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                       <Sequence.Variables>
-                                        <Variable x:TypeArguments="x:Int32" Name="int_besum" />
+                                        <Variable x:TypeArguments="x:Double" Name="db_besum" />
                                       </Sequence.Variables>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -310,10 +312,10 @@
                                       </Assign>
                                       <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_14">
                                         <Assign.To>
-                                          <OutArgument x:TypeArguments="x:Int32">[int_besum]</OutArgument>
+                                          <OutArgument x:TypeArguments="x:Double">[db_besum]</OutArgument>
                                         </Assign.To>
                                         <Assign.Value>
-                                          <InArgument x:TypeArguments="x:Int32">[CInt(str_amount)]</InArgument>
+                                          <InArgument x:TypeArguments="x:Double">[CDbl(str_amount)]</InArgument>
                                         </Assign.Value>
                                       </Assign>
                                       <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="InvokeMethod_5" MethodName="Add">
@@ -321,7 +323,7 @@
                                           <InArgument x:TypeArguments="scg:List(x:Double)">[lst_besum]</InArgument>
                                         </InvokeMethod.TargetObject>
                                         <InArgument x:TypeArguments="x:Double">
-                                          <VisualBasicValue x:TypeArguments="x:Double" ExpressionText="int_besum" />
+                                          <VisualBasicValue x:TypeArguments="x:Double" ExpressionText="db_besum" />
                                         </InArgument>
                                       </InvokeMethod>
                                       <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_9">
@@ -350,10 +352,11 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="576,89" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="576,81" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </Sequence>
@@ -371,7 +374,29 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="614,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[lst_write.ToString()]" />
-      <ui:ForEach x:TypeArguments="x:Double" sap2010:Annotation.AnnotationText="list에 있는 숫자$ 합산&#xD;&#xA;" CurrentIndex="[sumnumber]" DisplayName="For Each sumnumber" sap:VirtualizedContainerService.HintSize="614,337" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[lst_besum]">
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="614,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:Double">[db_sumnumber]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:Double">0</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:Double">[db_total]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:Double">0</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+      </ui:MultipleAssign>
+      <ui:ForEach x:TypeArguments="x:Double" sap2010:Annotation.AnnotationText="list에 있는 숫자$ 합산&#xD;&#xA;" CurrentIndex="[idx]" DisplayName="For Each sumnumber" sap:VirtualizedContainerService.HintSize="614,337" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[lst_besum]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:Double">
             <ActivityAction.Argument>
@@ -381,14 +406,15 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_17">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:Double">[int_total]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Double">[db_total]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:Double">[int_total+sumnumber]</InArgument>
+                  <InArgument x:TypeArguments="x:Double">[db_total+lst_besum(idx)]</InArgument>
                 </Assign.Value>
               </Assign>
             </Sequence>
@@ -400,12 +426,20 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
+      <Assign sap:VirtualizedContainerService.HintSize="614,114" sap2010:WorkflowViewState.IdRef="Assign_21">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Double">[db_total]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Double">[Math.Round(db_total, 2, MidpointRounding.AwayFromZero)]</InArgument>
+        </Assign.Value>
+      </Assign>
       <Assign sap2010:Annotation.AnnotationText="int에서 string으로 변환&#xD;&#xA;" sap:VirtualizedContainerService.HintSize="614,156" sap2010:WorkflowViewState.IdRef="Assign_19">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_total]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[CStr(int_total)]</InArgument>
+          <InArgument x:TypeArguments="x:String">[CStr(db_total)]</InArgument>
         </Assign.Value>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
