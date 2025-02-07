@@ -177,7 +177,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <If Condition="[line.Contains(&quot;0.00&quot;) Or line.Contains(&quot;SETTEL&quot;)]" sap:VirtualizedContainerService.HintSize="506,1415" sap2010:WorkflowViewState.IdRef="If_3">
+                          <If Condition="[line.Contains(&quot;0.00&quot;) Or line.Contains(&quot;SETTLEMENT&quot;)]" sap:VirtualizedContainerService.HintSize="506,1415" sap2010:WorkflowViewState.IdRef="If_3">
                             <If.Then>
                               <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="504,89" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -218,7 +218,7 @@
                                           <OutArgument x:TypeArguments="x:String">[str_line]</OutArgument>
                                         </Assign.To>
                                         <Assign.Value>
-                                          <InArgument x:TypeArguments="x:String" xml:space="preserve">["Total : " &amp; "            " &amp; str_amount]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" xml:space="preserve">["------------------------------------" &amp; vbLf &amp; "Ref. amount : " &amp; "   " &amp; str_amount]</InArgument>
                                         </Assign.Value>
                                       </Assign>
                                       <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Add">
@@ -257,7 +257,7 @@
                                           <OutArgument x:TypeArguments="x:String">[str_line]</OutArgument>
                                         </Assign.To>
                                         <Assign.Value>
-                                          <InArgument x:TypeArguments="x:String" xml:space="preserve">[str_ReferenceNo &amp; "            " &amp; str_amount]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" xml:space="preserve">[str_ReferenceNo &amp; "      " &amp; str_amount]</InArgument>
                                         </Assign.Value>
                                       </Assign>
                                       <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Add">
