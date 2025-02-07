@@ -89,7 +89,7 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="903,2250" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="903,2528" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="lst_write" />
       <Variable x:TypeArguments="x:String" Name="str_content" />
@@ -99,7 +99,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="576,2227" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="612,2505" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_ReadFile" />
         <Variable x:TypeArguments="x:String" Name="str_amount" />
@@ -112,8 +112,8 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ReadTextFile File="{x:Null}" Content="[str_ReadFile]" DisplayName="Read Text File" FileName="C:\Users\SEINENS\Downloads\Billing.txt" sap:VirtualizedContainerService.HintSize="542,112" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-      <Assign sap:VirtualizedContainerService.HintSize="542,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <ui:ReadTextFile File="{x:Null}" Content="[str_ReadFile]" DisplayName="Read Text File" FileName="C:\Users\SEINENS\Downloads\Billing.txt" sap:VirtualizedContainerService.HintSize="578,112" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+      <Assign sap:VirtualizedContainerService.HintSize="578,114" sap2010:WorkflowViewState.IdRef="Assign_4">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_normalized]</OutArgument>
         </Assign.To>
@@ -121,7 +121,7 @@
           <InArgument x:TypeArguments="x:String">[str_ReadFile.Replace(vbCrLf, vbLf).Replace(vbCr, vbLf)]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="542,114" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign sap:VirtualizedContainerService.HintSize="578,114" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="s:String[]">[arst_lines]</OutArgument>
         </Assign.To>
@@ -129,7 +129,7 @@
           <InArgument x:TypeArguments="s:String[]">[str_normalized.Split({vbLf}, StringSplitOptions.RemoveEmptyEntries)]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="542,114" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign sap:VirtualizedContainerService.HintSize="578,114" sap2010:WorkflowViewState.IdRef="Assign_8">
         <Assign.To>
           <OutArgument x:TypeArguments="scg:List(x:String)">[lst_write]</OutArgument>
         </Assign.To>
@@ -137,21 +137,21 @@
           <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each line" sap:VirtualizedContainerService.HintSize="542,1247" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arst_lines]">
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each line" sap:VirtualizedContainerService.HintSize="578,1525" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arst_lines]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:String" Name="line" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="540,1117" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="576,1395" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[line.Contains(&quot;$&quot;)]" sap:VirtualizedContainerService.HintSize="506,1057" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[line.Contains(&quot;$&quot;)]" sap:VirtualizedContainerService.HintSize="542,1335" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="504,839" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="540,1117" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="str_line" />
                     </Sequence.Variables>
@@ -160,9 +160,9 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[line.Contains(&quot;ERROR&quot;)]" sap:VirtualizedContainerService.HintSize="470,779" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If Condition="[line.Contains(&quot;ERROR&quot;)]" sap:VirtualizedContainerService.HintSize="506,1057" sap2010:WorkflowViewState.IdRef="If_2">
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,89" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="504,89" sap2010:WorkflowViewState.IdRef="Sequence_6">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -171,49 +171,69 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,561" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="504,839" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_2">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[str_ReferenceNo]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">[line.Split(" "c)(0).Trim]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_1">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[str_amount]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">[line.Split("$"c)(1).Split(" "c)(0).Trim()]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_9">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[str_line]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String" xml:space="preserve">[str_ReferenceNo &amp; "            " &amp; str_amount]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Add">
-                            <InvokeMethod.TargetObject>
-                              <InArgument x:TypeArguments="scg:List(x:String)">[lst_write]</InArgument>
-                            </InvokeMethod.TargetObject>
-                            <InArgument x:TypeArguments="x:String">[str_line]</InArgument>
-                          </InvokeMethod>
+                          <If Condition="[line.Contains(&quot;0.00&quot;)]" sap:VirtualizedContainerService.HintSize="470,779" sap2010:WorkflowViewState.IdRef="If_3">
+                            <If.Then>
+                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,89" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,561" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[str_line]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String" xml:space="preserve">[str_ReferenceNo &amp; "            " &amp; str_amount]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Add">
+                                  <InvokeMethod.TargetObject>
+                                    <InArgument x:TypeArguments="scg:List(x:String)">[lst_write]</InArgument>
+                                  </InvokeMethod.TargetObject>
+                                  <InArgument x:TypeArguments="x:String">[str_line]</InArgument>
+                                </InvokeMethod>
+                                <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[str_ReferenceNo]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[line.Split(" "c)(0).Trim]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[str_amount]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[line.Split("$"c)(1).Split(" "c)(0).Trim()]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </If.Else>
+                          </If>
                         </Sequence>
                       </If.Else>
                     </If>
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="504,89" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="540,89" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -226,8 +246,8 @@
           </ActivityAction>
         </ui:ForEach.Body>
       </ui:ForEach>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="542,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[lst_write.ToString()]" />
-      <Assign sap:VirtualizedContainerService.HintSize="542,114" sap2010:WorkflowViewState.IdRef="Assign_10">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="578,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[lst_write.ToString()]" />
+      <Assign sap:VirtualizedContainerService.HintSize="578,114" sap2010:WorkflowViewState.IdRef="Assign_10">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_content]</OutArgument>
         </Assign.To>
@@ -235,7 +255,7 @@
           <InArgument x:TypeArguments="x:String">[String.Join(Environment.NewLine, lst_write)]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="C:\Users\SEINENS\Downloads\BillingReprot_write.txt" sap:VirtualizedContainerService.HintSize="542,156" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[str_content]" />
+      <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="C:\Users\SEINENS\Downloads\BillingReprot_write.txt" sap:VirtualizedContainerService.HintSize="578,156" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[str_content]" />
     </Sequence>
   </Sequence>
 </Activity>
