@@ -91,7 +91,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="971,4998" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="971,5040" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="lst_write" />
       <Variable x:TypeArguments="x:String" Name="str_content" />
@@ -103,7 +103,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="648,4975" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="648,5017" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_ReadFile" />
         <Variable x:TypeArguments="x:String" Name="str_amount" />
@@ -181,19 +181,19 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="줄바꿈 기준으로 반복문&#xA;" DisplayName="For Each line" sap:VirtualizedContainerService.HintSize="614,2645" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arst_lines]">
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="줄바꿈 기준으로 반복문&#xA;" DisplayName="For Each line" sap:VirtualizedContainerService.HintSize="614,2687" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arst_lines]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:String" Name="line" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="612,2473" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="612,2515" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If sap2010:Annotation.AnnotationText="$포함된 행 실행&#xA;" Condition="[line.Contains(&quot;$&quot;)]" sap:VirtualizedContainerService.HintSize="578,2413" sap2010:WorkflowViewState.IdRef="If_1">
+              <If sap2010:Annotation.AnnotationText="$포함된 행 실행&#xA;" Condition="[line.Contains(&quot;$&quot;)]" sap:VirtualizedContainerService.HintSize="578,2455" sap2010:WorkflowViewState.IdRef="If_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -202,7 +202,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="576,2161" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="576,2203" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="str_line" />
                     </Sequence.Variables>
@@ -211,7 +211,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If sap2010:Annotation.AnnotationText="ERROR있는 행 삭제&#xA;" Condition="[line.Contains(&quot;ERROR&quot;)]" sap:VirtualizedContainerService.HintSize="542,2101" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If sap2010:Annotation.AnnotationText="ERROR있는 행 삭제&#xA;" Condition="[line.Contains(&quot;ERROR&quot;)]" sap:VirtualizedContainerService.HintSize="542,2143" sap2010:WorkflowViewState.IdRef="If_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -229,13 +229,13 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="540,1841" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="540,1883" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <If sap2010:Annotation.AnnotationText="가격 0.00 행 삭제&#xA;" Condition="[line.Contains(&quot;0.00&quot;) Or line.Contains(&quot;SETTLEMENT&quot;)]" sap:VirtualizedContainerService.HintSize="506,1781" sap2010:WorkflowViewState.IdRef="If_3">
+                          <If sap2010:Annotation.AnnotationText="가격 0.00 행 삭제&#xA;" Condition="[line.Contains(&quot;0.00&quot;) Or line.Contains(&quot;SETTLEMENT&quot;)]" sap:VirtualizedContainerService.HintSize="506,1823" sap2010:WorkflowViewState.IdRef="If_3">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -251,32 +251,37 @@
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="504,1521" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="504,1563" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <If sap2010:Annotation.AnnotationText="amount 계산&#xA;" Condition="[line.Contains(&quot;AMOUNT OF PAYMENTS&quot;)]" sap:VirtualizedContainerService.HintSize="470,1461" sap2010:WorkflowViewState.IdRef="If_4">
+                                <If sap2010:Annotation.AnnotationText="amount 계산&#xA;" Condition="[line.Contains(&quot;AMOUNT OF PAYMENTS&quot;)]" sap:VirtualizedContainerService.HintSize="470,1503" sap2010:WorkflowViewState.IdRef="If_4">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <If.Then>
-                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,447" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,489" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                      <Assign sap2010:Annotation.AnnotationText="기호($)를 기준으로 분할 및 공백을 기준으로 분할하여 n번째 요소를 공백없이 출력" sap:VirtualizedContainerService.HintSize="434,156" sap2010:WorkflowViewState.IdRef="Assign_12">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:String">[str_amount]</OutArgument>
                                         </Assign.To>
                                         <Assign.Value>
                                           <InArgument x:TypeArguments="x:String">[line.Split("$"c)(1).Split(" "c)(0).Trim()]</InArgument>
                                         </Assign.Value>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
                                       </Assign>
                                       <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_13">
                                         <Assign.To>
