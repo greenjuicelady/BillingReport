@@ -91,7 +91,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="971,4914" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="971,4998" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="lst_write" />
       <Variable x:TypeArguments="x:String" Name="str_content" />
@@ -103,7 +103,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="648,4891" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="648,4975" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_ReadFile" />
         <Variable x:TypeArguments="x:String" Name="str_amount" />
@@ -129,21 +129,31 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ReadTextFile>
-      <Assign DisplayName="Assign-줄 바꿈 문자로 통일" sap:VirtualizedContainerService.HintSize="614,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign sap2010:Annotation.AnnotationText="줄 바꿈 문자로 통일&#xD;&#xA;" DisplayName="Assign" sap:VirtualizedContainerService.HintSize="614,156" sap2010:WorkflowViewState.IdRef="Assign_4">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_normalized]</OutArgument>
         </Assign.To>
         <Assign.Value>
           <InArgument x:TypeArguments="x:String">[str_ReadFile.Replace(vbCrLf, vbLf).Replace(vbCr, vbLf)]</InArgument>
         </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <Assign DisplayName="Assign-빈 문자열을 제외한 부분들을 배열로 반환" sap:VirtualizedContainerService.HintSize="614,114" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign sap2010:Annotation.AnnotationText="빈 문자열을 제외한 부분들을 배열로 반환&#xD;&#xA;" DisplayName="Assign" sap:VirtualizedContainerService.HintSize="614,156" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="s:String[]">[arst_lines]</OutArgument>
         </Assign.To>
         <Assign.Value>
           <InArgument x:TypeArguments="s:String[]">[str_normalized.Split({vbLf}, StringSplitOptions.RemoveEmptyEntries)]</InArgument>
         </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
       </Assign>
       <Assign sap2010:Annotation.AnnotationText="lst_write 초기화&#xA;" sap:VirtualizedContainerService.HintSize="614,156" sap2010:WorkflowViewState.IdRef="Assign_8">
         <Assign.To>
