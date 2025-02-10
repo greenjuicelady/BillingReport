@@ -129,7 +129,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ReadTextFile>
-      <Assign sap:VirtualizedContainerService.HintSize="614,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign DisplayName="Assign-줄 바꿈 문자로 통일" sap:VirtualizedContainerService.HintSize="614,114" sap2010:WorkflowViewState.IdRef="Assign_4">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_normalized]</OutArgument>
         </Assign.To>
@@ -137,7 +137,7 @@
           <InArgument x:TypeArguments="x:String">[str_ReadFile.Replace(vbCrLf, vbLf).Replace(vbCr, vbLf)]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="614,114" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign DisplayName="Assign-빈 문자열을 제외한 부분들을 배열로 반환" sap:VirtualizedContainerService.HintSize="614,114" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="s:String[]">[arst_lines]</OutArgument>
         </Assign.To>
